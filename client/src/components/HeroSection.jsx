@@ -26,10 +26,10 @@ export const HeroSection = () => {
   ];
 
   const achievements = [
-    { number: "1+", label: "Years in Production", icon: <Shield className="h-3 w-3" /> },
-    { number: "15+", label: "Projects Delivered", icon: <TrendingUp className="h-3 w-3" /> },
+    { number: "4+", label: "Years in Production", icon: <Shield className="h-3 w-3" /> },
+    { number: "25+", label: "Projects Delivered", icon: <TrendingUp className="h-3 w-3" /> },
     { number: "100%", label: "Client Satisfaction", icon: <Award className="h-3 w-3" /> },
-    { number: "15+", label: "Projects completed", icon: <Zap className="h-3 w-3" /> }
+    { number: "25+", label: "Projects completed", icon: <Zap className="h-3 w-3" /> }
   ];
 
   useEffect(() => {
@@ -55,7 +55,7 @@ export const HeroSection = () => {
 
   const handleViewResume = () => {
     // Open resume in new tab
-    window.open('/Sahil-resume.pdf', '_blank', 'noopener,noreferrer');
+    window.open('/kaviska-resume.pdf', '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -129,15 +129,11 @@ export const HeroSection = () => {
             <motion.div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start" variants={{ hidden: { y: 30, opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.8 } } }}>
               <motion.a href="#projects" className="group relative overflow-hidden px-8 py-4 rounded-xl font-semibold bg-gradient-to-r from-primary to-purple-600 text-primary-foreground shadow-lg hover:shadow-xl text-sm flex items-center justify-center gap-3" whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
                 <Code className="h-5 w-5" /> 
-                <span>View Case Studies</span>
+                <span>View My Project</span>
                 <TrendingUp className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </motion.a>
               
-              <motion.a href="#contact" className="group relative overflow-hidden px-8 py-4 rounded-xl font-semibold border border-primary/50 text-foreground hover:border-primary transition-all duration-300 bg-background/80 backdrop-blur-sm text-sm flex items-center justify-center gap-3" whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
-                <Mail className="h-4 w-4" /> 
-                <span>Technical Interview</span>
-              </motion.a>
-              
+             
               <motion.button 
                 onClick={handleViewResume}
                 className="group relative overflow-hidden px-6 py-4 rounded-xl font-semibold border border-border text-muted-foreground hover:border-primary/30 transition-all duration-300 bg-background/60 backdrop-blur-sm text-sm flex items-center justify-center gap-2" 

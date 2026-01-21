@@ -71,35 +71,17 @@ export const ContactSection = () => {
     
     setIsSubmitting(true);
     
-    try {
-      const response = await fetch('https://formspree.io/f/xwpbojaj', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        toast({
-          title: "Message sent! 🎉",
-          description: "I'll get back to you within 24 hours.",
-          variant: "success",
-          className: "bg-green-600 text-white dark:bg-green-500 border border-green-700 shadow-lg"
-        });
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        throw new Error('Failed to send message');
-      }
-    } catch (error) {
+    // Simulate form submission
+    setTimeout(() => {
       toast({
-        title: "Oops! Something went wrong",
-        description: "Please try again or email me directly at codewithkinu@gmail.com",
-        variant: "destructive"
+        title: "Message sent! 🎉",
+        description: "I'll get back to you within 24 hours.",
+        variant: "success",
+        className: "bg-green-600 text-white dark:bg-green-500 border border-green-700 shadow-lg"
       });
-    } finally {
+      setFormData({ name: '', email: '', message: '' });
       setIsSubmitting(false);
-    }
+    }, 1500);
   };
 
   return (
@@ -126,44 +108,45 @@ export const ContactSection = () => {
             </h3>
 
             <div className="space-y-4 sm:space-y-6">
-              <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 hover:bg-accent/30 rounded-lg sm:rounded-xl transition-all duration-300">
-                <div className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-primary/10 text-primary">
+              <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 hover:bg-accent/30 rounded-lg sm:rounded-xl transition-all duration-300">
+                <div className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-primary/10 text-primary flex-shrink-0">
                   <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
-                <div>
+                <div className="flex-1 min-w-0">
                   <p className="text-xs sm:text-sm text-muted-foreground">Email</p>
                   <a
-                    href="mailto:codewithkinu@gmail.com"
-                    className="text-sm sm:text-base font-medium hover:text-primary transition-colors"
+                    href="mailto:kaviska525@gmail.com"
+                    className="text-sm sm:text-base font-medium hover:text-primary transition-colors break-all"
                   >
-                    codewithkinu@gmail.com
+                    kaviska525@gmail.com
                   </a>
                 </div>
               </div>
               
-              <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 hover:bg-accent/30 rounded-lg sm:rounded-xl transition-all duration-300">
-                <div className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-primary/10 text-primary">
+              <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 hover:bg-accent/30 rounded-lg sm:rounded-xl transition-all duration-300">
+                <div className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-primary/10 text-primary flex-shrink-0">
                   <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
-                <div>
+                <div className="flex-1 min-w-0">
                   <p className="text-xs sm:text-sm text-muted-foreground">Phone</p>
                   <a
-                    href="tel:+919315145594"
+                    href="tel:+94782099179"
                     className="text-sm sm:text-base font-medium hover:text-primary transition-colors"
                   >
-                    +91 9315145594
+                    +94 78 209 9179
                   </a>
                 </div>
               </div>
               
-              <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 hover:bg-accent/30 rounded-lg sm:rounded-xl transition-all duration-300">
-                <div className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-primary/10 text-primary">
+              <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 hover:bg-accent/30 rounded-lg sm:rounded-xl transition-all duration-300">
+                <div className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-primary/10 text-primary flex-shrink-0">
                   <MapPin className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
-                <div>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Location</p>
+                <div className="flex-1 min-w-0">
+                  <p className="text-xs sm:text-sm text-muted-foreground">Address</p>
                   <span className="text-sm sm:text-base font-medium">
-                    Bengaluru, Karnataka India
+                    220/3, Meegahawata Road,<br />
+                    Wanawasala, Kelaniya
                   </span>
                 </div>
               </div>
@@ -232,7 +215,7 @@ export const ContactSection = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all text-sm sm:text-base"
-                  placeholder="John Doe"
+                  placeholder="e.g., John Smith"
                 />
               </div>
 
@@ -251,7 +234,7 @@ export const ContactSection = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all text-sm sm:text-base"
-                  placeholder="john@example.com"
+                  placeholder="e.g., john@example.com"
                 />
               </div>
 
@@ -270,7 +253,7 @@ export const ContactSection = () => {
                   required
                   rows={4}
                   className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all resize-none text-sm sm:text-base"
-                  placeholder="Hey, I'd love to collaborate on..."
+                  placeholder="e.g., Hi! I'm interested in working with you on a web development project. I need a modern e-commerce website..."
                 />
               </div>
 
