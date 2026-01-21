@@ -1,4 +1,4 @@
-import { ArrowRight, ExternalLink, Github, ChevronUp, Star, Code, ChevronDown, MoveRight, Filter, Sparkles, Award, Zap, Play, Eye, Calendar, Users, X } from "lucide-react";
+import { ArrowRight, ExternalLink, Github, ChevronUp, Star, Code, ChevronDown, MoveRight, Filter, Sparkles, Award, Zap, Eye, Calendar, Users } from "lucide-react";
 import { useState, useRef } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 
@@ -110,6 +110,32 @@ const projects = [
     accentColor: "from-orange-500 to-red-600",
     status: "Live",
     highlights: ["Frontend Design", "WordPress Development"]
+  },
+  {
+    id: 9,
+    title: "The Shacho Restaurant",
+    category: "Food Tech",
+    description: "Premium Japanese restaurant website featuring elegant design, menu showcase, and online reservation system. Built with modern web technologies for an immersive dining experience.",
+    image: "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=800&q=80",
+    tags: ["React", "Next.js", "Tailwind", "Japanese", "Responsive"],
+    demoUrl: "https://theshacho.jp",
+    githubUrl: "https://github.com/kaviska",
+    accentColor: "from-red-500 to-orange-600",
+    status: "Development",
+    highlights: ["Restaurant Website", "Japan Market", "Ongoing"]
+  },
+  {
+    id: 10,
+    title: "Aayubo Event Management",
+    category: "Event Management",
+    description: "Comprehensive event management platform for Japanese market. Features include event planning, booking system, vendor management, and customer relationship tools.",
+    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80",
+    tags: ["React", "Node.js", "MongoDB", "Event System", "CRM"],
+    demoUrl: "https://aayubo.jp",
+    githubUrl: "https://github.com/kaviska",
+    accentColor: "from-purple-500 to-pink-600",
+    status: "Development",
+    highlights: ["Event Platform", "Japan Market", "Ongoing"]
   }
 ];
 
@@ -118,7 +144,8 @@ const categoryColors = {
   "Food Tech": "from-amber-500/20 to-orange-600/20 text-amber-600 border-amber-500/30",
   "Automotive": "from-blue-500/20 to-cyan-600/20 text-blue-600 border-blue-500/30",
   "Social Media Tools": "from-pink-500/20 to-purple-600/20 text-pink-600 border-pink-500/30",
-  "Travel & Services": "from-sky-500/20 to-blue-600/20 text-sky-600 border-sky-500/30"
+  "Travel & Services": "from-sky-500/20 to-blue-600/20 text-sky-600 border-sky-500/30",
+  "Event Management": "from-purple-500/20 to-pink-600/20 text-purple-600 border-purple-500/30"
 };
 
 export const ProjectsSection = () => {
@@ -126,8 +153,6 @@ export const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState("All");
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
   const [hoveredProject, setHoveredProject] = useState(null);
-  const [selectedVideo, setSelectedVideo] = useState(null);
-  const videoRef = useRef(null);
   const sectionRef = useRef(null);
   
   const { scrollYProgress } = useScroll({
@@ -150,18 +175,6 @@ export const ProjectsSection = () => {
     setActiveFilter(category);
     setShowAll(false);
     setIsMobileFilterOpen(false);
-  };
-
-  const handleVideoPlay = (project) => {
-    setSelectedVideo(project);
-  };
-
-  const handleCloseVideo = () => {
-    setSelectedVideo(null);
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-    }
   };
 
   const ProjectHighlights = ({ highlights }) => (
@@ -310,15 +323,22 @@ export const ProjectsSection = () => {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: hoveredProject === project.id ? 1 : 0 }}
                     >
-                      {/* Video Play Button */}
-                      <motion.button
-                        onClick={() => handleVideoPlay(project)}
+                      {/* Demo Button */}
+                      <motion.a
+                        href={project.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        className="p-3 rounded-full backdrop-blur-sm border bg-white/20 text-white border-white/30 hover:bg-white/30 transition-all duration-300"
+                        className={`p-3 rounded-full backdrop-blur-sm border transition-all duration-300 ${
+                          project.demoUrl === "#" 
+                            ? "bg-gray-500/50 text-gray-300 border-gray-500/30 cursor-not-allowed"
+                            : "bg-white/20 text-white border-white/30 hover:bg-white/30"
+                        }`}
+                        onClick={(e) => project.demoUrl === "#" && e.preventDefault()}
                       >
-                        <Play size={20} />
-                      </motion.button>
+                        <Eye size={20} />
+                      </motion.a>
                       
                       {/* Code Button */}
                       <motion.a
@@ -498,7 +518,7 @@ export const ProjectsSection = () => {
               </motion.a>
               
               <motion.a
-                href="https://github.com/sahilmd01"
+                href="https://github.com/kaviska"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
@@ -512,103 +532,6 @@ export const ProjectsSection = () => {
           </div>
         </motion.div>
       </div>
-
-      {/* Video Modal */}
-      <AnimatePresence>
-        {selectedVideo && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
-            onClick={handleCloseVideo}
-          >
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              transition={{ type: "spring", damping: 25 }}
-              className="relative bg-background rounded-2xl overflow-hidden shadow-2xl max-w-4xl w-full max-h-[80vh]"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Modal Header */}
-              <div className="flex items-center justify-between p-6 border-b border-border">
-                <div>
-                  <h3 className="text-xl font-bold text-foreground">
-                    {selectedVideo.title} Demo
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    {selectedVideo.category}
-                  </p>
-                </div>
-                <motion.button
-                  onClick={handleCloseVideo}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="p-2 rounded-full hover:bg-muted transition-colors duration-200"
-                >
-                  <X size={24} />
-                </motion.button>
-              </div>
-
-              {/* Video Player */}
-              <div className="aspect-video bg-black">
-                <video
-                  ref={videoRef}
-                  src={selectedVideo.video}
-                  controls
-                  autoPlay
-                  className="w-full h-full object-contain"
-                  onEnded={handleCloseVideo}
-                >
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-
-              {/* Modal Footer */}
-              <div className="p-6 border-t border-border">
-                <div className="flex flex-col sm:flex-row gap-4 justify-between items-center">
-                  <p className="text-muted-foreground text-sm flex-1">
-                    Watch the demo of {selectedVideo.title} in action
-                  </p>
-                  <div className="flex gap-3">
-                    <motion.a
-                      href={selectedVideo.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className={`px-6 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                        selectedVideo.demoUrl === "#"
-                          ? "bg-muted text-muted-foreground cursor-not-allowed border border-border"
-                          : "bg-primary text-primary-foreground hover:bg-primary/90"
-                      }`}
-                      onClick={(e) => selectedVideo.demoUrl === "#" && e.preventDefault()}
-                    >
-                      Visit Live Site
-                    </motion.a>
-                    <motion.a
-                      href={selectedVideo.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className={`px-6 py-2 rounded-lg text-sm font-medium border transition-all duration-300 ${
-                        selectedVideo.githubUrl === "#"
-                          ? "bg-muted text-muted-foreground cursor-not-allowed border-border"
-                          : "bg-background text-foreground border-border hover:border-primary hover:bg-primary/5"
-                      }`}
-                      onClick={(e) => selectedVideo.githubUrl === "#" && e.preventDefault()}
-                    >
-                      View Code
-                    </motion.a>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 };

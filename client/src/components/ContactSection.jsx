@@ -87,14 +87,14 @@ export const ContactSection = () => {
   return (
     <section id="contact" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 relative bg-background">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-12 sm:mb-16">
+        <div className="mb-12 sm:mb-16">
           <span className="inline-block px-3 py-1 text-xs sm:text-sm font-medium rounded-full bg-primary/10 text-primary mb-3 sm:mb-4">
             Let's Connect
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600">
             Get In Touch
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl">
             Have a project in mind or just want to say hi? My inbox is always open.
           </p>
         </div>
@@ -159,7 +159,7 @@ export const ContactSection = () => {
                   {
                     icon: Linkedin,
                     label: "LinkedIn",
-                    url: "https://www.linkedin.com/in/codewithkinu",
+                    url: "https://www.linkedin.com/in/kaviska-dilshan/",
                   },
                   {
                     icon: Twitter,
@@ -169,13 +169,9 @@ export const ContactSection = () => {
                   {
                     icon: Github,
                     label: "GitHub",
-                    url: "https://github.com/Sahilmd01",
+                    url: "https://github.com/kaviska",
                   },
-                  {
-                    icon: Instagram,
-                    label: "Instagram",
-                    url: "https://www.instagram.com/dubbinut",
-                  },
+                  
                 ].map((social, index) => (
                   <a
                     key={index}
