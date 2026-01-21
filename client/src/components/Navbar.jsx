@@ -148,7 +148,7 @@ export const Navbar = () => {
       >
         {/* Website Globe Button */}
         <motion.a
-          href="https://avoliq.vercel.app"
+          href="https://webkd-iota.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
