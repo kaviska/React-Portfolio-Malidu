@@ -28,11 +28,11 @@ const WelcomeScreen = ({ onWelcomeComplete }) => {
   };
 
   const currentColors = colors[theme] || colors.dark;
-  const portfolioUrl = "www.devlyhub.in";
+  const portfolioUrl = "University of Moratuwa | WSO2";
   const welcomeMessages = [
-    "Crafting digital experiences",
-    "Software Engineer",
-    "Full-stack development"
+    "IT Student & Developer",
+    "Building digital solutions",
+    "Global web experience"
   ];
 
   useEffect(() => {
@@ -134,14 +134,35 @@ const WelcomeScreen = ({ onWelcomeComplete }) => {
       >
         {/* Animated background elements - scaled down for mobile */}
         <motion.div className="absolute inset-0 -z-10 overflow-hidden opacity-20">
+          {/* Grid pattern */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:64px_64px]" />
+          
           <motion.div 
-            className="absolute top-1/4 left-1/4 w-32 h-32 md:w-64 md:h-64 rounded-full blur-[50px] md:blur-[100px]"
+            className="absolute top-1/4 left-1/4 w-40 h-40 md:w-80 md:h-80 rounded-full blur-[60px] md:blur-[120px]"
             style={{ 
-              background: `linear-gradient(to right, ${currentColors.primary}, ${currentColors.secondary})`
+              background: `radial-gradient(circle, ${currentColors.secondary}, transparent)`
             }}
             animate={{
-              x: [0, 20, 0],
-              y: [0, -30, 0],
+              scale: [1, 1.2, 1],
+              x: [0, 30, 0],
+              y: [0, -20, 0],
+            }}
+            transition={{
+              duration: 12,
+              repeat: Infinity,
+              repeatType: 'reverse',
+              ease: 'easeInOut'
+            }}
+          />
+          <motion.div 
+            className="absolute bottom-1/4 right-1/4 w-36 h-36 md:w-72 md:h-72 rounded-full blur-[50px] md:blur-[100px]"
+            style={{ 
+              background: `radial-gradient(circle, ${currentColors.primary}, transparent)`
+            }}
+            animate={{
+              scale: [1, 1.3, 1],
+              x: [0, -20, 0],
+              y: [0, 30, 0],
             }}
             transition={{
               duration: 15,
@@ -151,19 +172,18 @@ const WelcomeScreen = ({ onWelcomeComplete }) => {
             }}
           />
           <motion.div 
-            className="absolute top-1/3 right-1/4 w-36 h-36 md:w-72 md:h-72 rounded-full blur-[60px] md:blur-[120px]"
+            className="absolute top-1/2 right-1/3 w-32 h-32 md:w-64 md:h-64 rounded-full blur-[70px] md:blur-[140px]"
             style={{ 
-              background: `linear-gradient(to right, ${currentColors.secondary}, #ec4899)`
+              background: `radial-gradient(circle, #ec4899, transparent)`
             }}
             animate={{
-              x: [0, -30, 0],
-              y: [0, 40, 0],
+              scale: [1, 1.1, 1],
+              rotate: [0, 180, 360],
             }}
             transition={{
-              duration: 20,
+              duration: 18,
               repeat: Infinity,
-              repeatType: 'reverse',
-              ease: 'easeInOut'
+              ease: 'linear'
             }}
           />
         </motion.div>
@@ -194,15 +214,24 @@ const WelcomeScreen = ({ onWelcomeComplete }) => {
                 style={{ color: currentColors.primary }}
                 variants={contentVariants}
               >
-                <span className="inline-block">Hello</span>
+                <motion.span 
+                  className="inline-block"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  Welcome
+                </motion.span>
                 <motion.span 
                   className="inline-block ml-2 sm:ml-3 relative"
                   style={{ color: currentColors.secondary }}
-                  variants={contentVariants}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
                 >
-                  There !
+                  to my world
                   <motion.span 
-                    className="absolute -bottom-1 sm:-bottom-2 left-0 h-0.5 sm:h-1 w-full"
+                    className="absolute -bottom-1 sm:-bottom-2 left-0 h-0.5 sm:h-1 w-full origin-left"
                     style={{ backgroundColor: currentColors.secondary }}
                     variants={underlineVariants}
                   />
@@ -237,7 +266,7 @@ const WelcomeScreen = ({ onWelcomeComplete }) => {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1.5 }}
                 >
-                  (This is my portfolio website)
+                  Creating innovative solutions for clients worldwide
                 </motion.p>
               </motion.div>
             )}
@@ -266,7 +295,7 @@ const WelcomeScreen = ({ onWelcomeComplete }) => {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5 }}
                 >
-                  Loading my best work for you...
+                  Preparing portfolio showcase...
                 </motion.p>
               </motion.div>
             )}
