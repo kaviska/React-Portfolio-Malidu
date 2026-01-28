@@ -62,7 +62,7 @@ const projects = [
     id: 5,
     title: "POS System",
     category: "E-commerce",
-    description: "A comprehensive web-based Point of Sale system with admin dashboard. Features include inventory management, sales tracking, and user authentication. Login with admin@example.com / password for demo access.",
+    description: "Comprehensive web-based Point of Sale system with admin dashboard. Features include inventory management, sales tracking, and user authentication. Login with admin@example.com / password for demo access.",
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80&fit=crop",
     tags: ["Next", "React", "Tailwind", "MySql", "Github"],
     demoUrl: "https://temp-pos.vercel.app",
@@ -90,7 +90,7 @@ const projects = [
     id: 7,
     title: "Japanese E-Commerce",
     category: "E-commerce",
-    description: "A comprehensive Japanese e-commerce platform built with WooCommerce. Features include multi-language support, Japanese payment gateways, and custom product catalog management.",
+    description: "Comprehensive Japanese e-commerce platform built with WooCommerce. Features include multi-language support, Japanese payment gateways, and custom product catalog management.",
     image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&q=80&fit=crop",
     tags: ["Laravel", "Tailwind", "React", "Redux", "MUI"],
     demoUrl: "https://iymart.jp/",
@@ -144,7 +144,7 @@ const projects = [
     id: 12,
     title: "Food & Cheer Brand",
     category: "Food Tech",
-    description: "Brand website for a food and cheerleading company. Features are modern design, responsive layout, and custom WordPress theme development with Elementor page builder.",
+    description: "Brand website for a food and cheerleading company. Features include modern design, responsive layout, and custom WordPress theme development with Elementor page builder.",
     image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80&fit=crop",
     tags: ["Wordpress", "Elementor", "Css", "Html", "Figma", "JavaScript"],
     demoUrl: "https://eecheer.com/",
@@ -379,7 +379,7 @@ export const ProjectsSection = () => {
                   {/* Content Section */}
                   <div className="p-6 flex-1 flex flex-col">
                     <div className="flex items-start justify-between mb-3">
-                      <h3 className="text-xl font-bold text-foreground">
+                      <h3 className="text-xl font-bold text-foreground text-left">
                         {project.title}
                       </h3>
                       {project.featured && (
@@ -395,7 +395,7 @@ export const ProjectsSection = () => {
                       )}
                     </div>
 
-                    <p className="text-muted-foreground text-sm mb-4 leading-relaxed flex-1">
+                    <p className="text-muted-foreground text-sm mb-4 leading-relaxed flex-1 text-left">
                       {project.description}
                     </p>
 
