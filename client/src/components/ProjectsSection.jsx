@@ -115,19 +115,6 @@ const projects = [
     highlights: ["Frontend", "Backend", "Admin Panel"]
   },
   {
-    id: 9,
-    title: "Instagram Downloader Tool",
-    category: "Social Media Tools",
-    description: "A web tool for downloading Instagram content including photos, videos, and stories. Built with Next.js and features a clean, user-friendly interface with fast download capabilities.",
-    image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80&fit=crop",
-    tags: ["Next", "React", "MUI", "Tailwind", "Github"],
-    demoUrl: "https://savefrominsta.app/",
-    githubUrl: "https://github.com/kaviska",
-    accentColor: "from-pink-500 to-purple-600",
-    status: "Live",
-    highlights: ["Frontend", "Backend", "API Integration"]
-  },
-  {
     id: 10,
     title: "Parking Booking System",
     category: "Travel & Services",
