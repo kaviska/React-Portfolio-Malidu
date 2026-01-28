@@ -5,10 +5,65 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 const projects = [
   {
     id: 1,
+    title: "Aayubo Event Management",
+    category: "Event Management",
+    description: "Comprehensive event management platform for Japanese market. Features include event planning, booking system, vendor management, and customer relationship tools.",
+    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80&fit=crop",
+    tags: ["React", "Node.js", "MongoDB", "Event System", "CRM"],
+    demoUrl: "https://aayubo.jp",
+    githubUrl: "https://github.com/kaviska",
+    featured: true,
+    accentColor: "from-purple-500 to-pink-600",
+    status: "Development",
+    highlights: ["Event Platform", "Japan Market", "Ongoing"]
+  },
+  {
+    id: 2,
+    title: "Atsmore E-Commerce",
+    category: "E-commerce",
+    description: "Modern e-commerce web application featuring comprehensive product catalog, shopping cart, payment integration, and user management. Built with cutting-edge technologies for optimal performance.",
+    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80&fit=crop",
+    tags: ["React", "Node.js", "E-commerce", "Tailwind", "MongoDB"],
+    demoUrl: "http://theme.gigantoo.com/",
+    githubUrl: "https://github.com/kaviska",
+    featured: true,
+    accentColor: "from-indigo-500 to-purple-600",
+    status: "Development",
+    highlights: ["E-commerce Platform", "Full Stack", "Ongoing"]
+  },
+  {
+    id: 3,
+    title: "ERP System for Travel Agency",
+    category: "Business Solutions",
+    description: "Comprehensive ERP system designed for travel agencies with 12 management panels. Features include invoice management, PDF export, Excel export, booking system, and complete business analytics.",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80&fit=crop",
+    tags: ["Laravel", "React", "MySQL", "PDF Export", "Excel", "Invoice"],
+    demoUrl: "#",
+    githubUrl: "#",
+    featured: true,
+    accentColor: "from-blue-500 to-indigo-600",
+    status: "Development",
+    highlights: ["12 Panels", "PDF & Excel Export", "Invoice Management"]
+  },
+  {
+    id: 4,
+    title: "The Shacho Restaurant",
+    category: "Food Tech",
+    description: "Premium Japanese restaurant website featuring elegant design, menu showcase, and online reservation system. Built with modern web technologies for an immersive dining experience.",
+    image: "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=800&q=80&fit=crop",
+    tags: ["React", "Next.js", "Tailwind", "Japanese", "Responsive"],
+    demoUrl: "https://theshacho.jp",
+    githubUrl: "https://github.com/kaviska",
+    accentColor: "from-red-500 to-orange-600",
+    status: "Development",
+    highlights: ["Restaurant Website", "Japan Market", "Ongoing"]
+  },
+  {
+    id: 5,
     title: "POS System",
     category: "E-commerce",
     description: "A comprehensive web-based Point of Sale system with admin dashboard. Features include inventory management, sales tracking, and user authentication. Login with admin@example.com / password for demo access.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80&fit=crop",
     tags: ["Next", "React", "Tailwind", "MySql", "Github"],
     demoUrl: "https://temp-pos.vercel.app",
     githubUrl: "https://github.com/kaviska",
@@ -18,11 +73,11 @@ const projects = [
     highlights: ["Frontend", "Backend", "Admin"]
   },
   {
-    id: 2,
+    id: 6,
     title: "Restaurant POS System",
     category: "Food Tech",
     description: "Multi-role restaurant POS system with separate access for Admin, Kitchen, Cashier, and Waiter. Features role-based permissions, order management, kitchen display system, and real-time updates.",
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80&fit=crop",
     tags: ["Laravel", "Tailwind", "React", "Redux", "MUI"],
     demoUrl: "https://white-octopus-933718.hostingersite.com",
     githubUrl: "https://github.com/kaviska",
@@ -32,11 +87,11 @@ const projects = [
     highlights: ["Frontend", "Backend", "Multi-Role System"]
   },
   {
-    id: 3,
+    id: 7,
     title: "Japanese E-Commerce",
     category: "E-commerce",
     description: "A comprehensive Japanese e-commerce platform built with WooCommerce. Features include multi-language support, Japanese payment gateways, and custom product catalog management.",
-    image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&q=80&fit=crop",
     tags: ["Laravel", "Tailwind", "React", "Redux", "MUI"],
     demoUrl: "https://iymart.jp/",
     githubUrl: "https://github.com/kaviska",
@@ -46,11 +101,11 @@ const projects = [
     highlights: ["Frontend", "Backend", "Payment Integration"]
   },
   {
-    id: 4,
+    id: 8,
     title: "Japanese Car Sales",
     category: "Automotive",
     description: "Japanese car dealership website with advanced search filters, car listings management, and inquiry system. Features include vehicle comparison, detailed specifications, and contact forms.",
-    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80&fit=crop",
     tags: ["Laravel", "Php", "Bootstrap", "Css", "JavaScript"],
     demoUrl: "https://nipponcars.jp/",
     githubUrl: "https://github.com/kaviska",
@@ -60,11 +115,11 @@ const projects = [
     highlights: ["Frontend", "Backend", "Admin Panel"]
   },
   {
-    id: 5,
+    id: 9,
     title: "Instagram Downloader Tool",
     category: "Social Media Tools",
     description: "A web tool for downloading Instagram content including photos, videos, and stories. Built with Next.js and features a clean, user-friendly interface with fast download capabilities.",
-    image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80&fit=crop",
     tags: ["Next", "React", "MUI", "Tailwind", "Github"],
     demoUrl: "https://savefrominsta.app/",
     githubUrl: "https://github.com/kaviska",
@@ -73,11 +128,11 @@ const projects = [
     highlights: ["Frontend", "Backend", "API Integration"]
   },
   {
-    id: 6,
+    id: 10,
     title: "Parking Booking System",
     category: "Travel & Services",
     description: "Airport parking booking platform with Stripe payment integration. Features include real-time availability, booking management, and automated confirmation emails.",
-    image: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=800&q=80&fit=crop",
     tags: ["Html", "Css", "Bootstrap", "Php", "Stripe"],
     demoUrl: "https://parking.yourmeetandgreetservice.co.uk/",
     githubUrl: "https://github.com/kaviska",
@@ -86,12 +141,12 @@ const projects = [
     highlights: ["Frontend", "Backend", "Payment Integration"]
   },
   {
-    id: 7,
+    id: 11,
     title: "Next.js E-Commerce",
     category: "E-commerce",
     description: "Modern e-commerce website built with Next.js featuring product catalog, shopping cart, user authentication, and responsive design. Includes Redux for state management and Material-UI components.",
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80",
-    tags: ["Laravel", "React", "Tailwind", "Redux", "MUI", "Github"],
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80&fit=crop",
+    tags: ["Next.js", "React", "Tailwind", "Redux", "MUI"],
     demoUrl: "https://next-e-commerce-neon.vercel.app/",
     githubUrl: "https://github.com/kaviska",
     accentColor: "from-violet-500 to-purple-600",
@@ -99,43 +154,17 @@ const projects = [
     highlights: ["Frontend", "Backend", "State Management"]
   },
   {
-    id: 8,
+    id: 12,
     title: "Food & Cheer Brand",
     category: "Food Tech",
     description: "Brand website for a food and cheerleading company. Features are modern design, responsive layout, and custom WordPress theme development with Elementor page builder.",
-    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80&fit=crop",
     tags: ["Wordpress", "Elementor", "Css", "Html", "Figma", "JavaScript"],
     demoUrl: "https://eecheer.com/",
     githubUrl: "https://github.com/kaviska",
     accentColor: "from-orange-500 to-red-600",
     status: "Live",
     highlights: ["Frontend Design", "WordPress Development"]
-  },
-  {
-    id: 9,
-    title: "The Shacho Restaurant",
-    category: "Food Tech",
-    description: "Premium Japanese restaurant website featuring elegant design, menu showcase, and online reservation system. Built with modern web technologies for an immersive dining experience.",
-    image: "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=800&q=80",
-    tags: ["React", "Next.js", "Tailwind", "Japanese", "Responsive"],
-    demoUrl: "https://theshacho.jp",
-    githubUrl: "https://github.com/kaviska",
-    accentColor: "from-red-500 to-orange-600",
-    status: "Development",
-    highlights: ["Restaurant Website", "Japan Market", "Ongoing"]
-  },
-  {
-    id: 10,
-    title: "Aayubo Event Management",
-    category: "Event Management",
-    description: "Comprehensive event management platform for Japanese market. Features include event planning, booking system, vendor management, and customer relationship tools.",
-    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80",
-    tags: ["React", "Node.js", "MongoDB", "Event System", "CRM"],
-    demoUrl: "https://aayubo.jp",
-    githubUrl: "https://github.com/kaviska",
-    accentColor: "from-purple-500 to-pink-600",
-    status: "Development",
-    highlights: ["Event Platform", "Japan Market", "Ongoing"]
   }
 ];
 
@@ -145,7 +174,8 @@ const categoryColors = {
   "Automotive": "from-blue-500/20 to-cyan-600/20 text-blue-600 border-blue-500/30",
   "Social Media Tools": "from-pink-500/20 to-purple-600/20 text-pink-600 border-pink-500/30",
   "Travel & Services": "from-sky-500/20 to-blue-600/20 text-sky-600 border-sky-500/30",
-  "Event Management": "from-purple-500/20 to-pink-600/20 text-purple-600 border-purple-500/30"
+  "Event Management": "from-purple-500/20 to-pink-600/20 text-purple-600 border-purple-500/30",
+  "Business Solutions": "from-blue-500/20 to-indigo-600/20 text-blue-600 border-blue-500/30"
 };
 
 export const ProjectsSection = () => {
