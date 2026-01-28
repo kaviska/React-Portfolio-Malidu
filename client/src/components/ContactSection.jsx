@@ -87,14 +87,14 @@ export const ContactSection = () => {
   return (
     <section id="contact" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 relative bg-background">
       <div className="container mx-auto max-w-6xl">
-        <div className="mb-12 sm:mb-16">
+        <div className="mb-12 sm:mb-16 text-left">
           <span className="inline-block px-3 py-1 text-xs sm:text-sm font-medium rounded-full bg-primary/10 text-primary mb-3 sm:mb-4">
             Let's Connect
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600 text-left">
             Get In Touch
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl text-left">
             Have a project in mind or just want to say hi? My inbox is always open.
           </p>
         </div>
@@ -102,7 +102,7 @@ export const ContactSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
           {/* Contact Information */}
           <div className="space-y-6 sm:space-y-8 p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-gradient-to-br from-secondary/20 to-background border border-border">
-            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 flex items-center gap-2">
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 flex items-center gap-2 text-left">
               <span className="w-3 sm:w-4 h-3 sm:h-4 rounded-full bg-primary"></span>
               Contact Details
             </h3>
@@ -112,11 +112,11 @@ export const ContactSection = () => {
                 <div className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-primary/10 text-primary flex-shrink-0">
                   <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-xs sm:text-sm text-muted-foreground">Email</p>
+                <div className="flex-1 min-w-0 text-left">
+                  <p className="text-xs sm:text-sm text-muted-foreground text-left">Email</p>
                   <a
                     href="mailto:kaviska525@gmail.com"
-                    className="text-sm sm:text-base font-medium hover:text-primary transition-colors break-all"
+                    className="text-sm sm:text-base font-medium hover:text-primary transition-colors break-all text-left"
                   >
                     kaviska525@gmail.com
                   </a>
@@ -127,11 +127,11 @@ export const ContactSection = () => {
                 <div className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-primary/10 text-primary flex-shrink-0">
                   <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-xs sm:text-sm text-muted-foreground">Phone</p>
+                <div className="flex-1 min-w-0 text-left">
+                  <p className="text-xs sm:text-sm text-muted-foreground text-left">Phone</p>
                   <a
                     href="tel:+94782099179"
-                    className="text-sm sm:text-base font-medium hover:text-primary transition-colors"
+                    className="text-sm sm:text-base font-medium hover:text-primary transition-colors text-left"
                   >
                     +94 78 209 9179
                   </a>
@@ -142,9 +142,9 @@ export const ContactSection = () => {
                 <div className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-primary/10 text-primary flex-shrink-0">
                   <MapPin className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-xs sm:text-sm text-muted-foreground">Address</p>
-                  <span className="text-sm sm:text-base font-medium">
+                <div className="flex-1 min-w-0 text-left">
+                  <p className="text-xs sm:text-sm text-muted-foreground text-left">Address</p>
+                  <span className="text-sm sm:text-base font-medium text-left">
                     220/3, Meegahawata Road,<br />
                     Wanawasala, Kelaniya
                   </span>
@@ -152,8 +152,8 @@ export const ContactSection = () => {
               </div>
             </div>
 
-            <div className="pt-6 sm:pt-8">
-              <h4 className="font-medium mb-3 sm:mb-4 text-xs sm:text-sm text-muted-foreground">Find me on</h4>
+            <div className="pt-6 sm:pt-8 text-left">
+              <h4 className="font-medium mb-3 sm:mb-4 text-xs sm:text-sm text-muted-foreground text-left">Find me on</h4>
               <div className="flex gap-2 sm:gap-3">
                 {[
                   {
@@ -190,7 +190,7 @@ export const ContactSection = () => {
 
           {/* Contact Form */}
           <div className="p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-card border border-border shadow-sm">
-            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 flex items-center gap-2">
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 flex items-center gap-2 text-left">
               <span className="w-3 sm:w-4 h-3 sm:h-4 rounded-full bg-primary"></span>
               Send Me a Message
             </h3>
@@ -199,7 +199,7 @@ export const ContactSection = () => {
               <div className="space-y-1">
                 <label
                   htmlFor="name"
-                  className="text-xs sm:text-sm font-medium text-muted-foreground"
+                  className="text-xs sm:text-sm font-medium text-muted-foreground text-left block"
                 >
                   Your Name
                 </label>
@@ -218,7 +218,7 @@ export const ContactSection = () => {
               <div className="space-y-1">
                 <label
                   htmlFor="email"
-                  className="text-xs sm:text-sm font-medium text-muted-foreground"
+                  className="text-xs sm:text-sm font-medium text-muted-foreground text-left block"
                 >
                   Your Email
                 </label>
@@ -237,7 +237,7 @@ export const ContactSection = () => {
               <div className="space-y-1">
                 <label
                   htmlFor="message"
-                  className="text-xs sm:text-sm font-medium text-muted-foreground"
+                  className="text-xs sm:text-sm font-medium text-muted-foreground text-left block"
                 >
                   Your Message
                 </label>
